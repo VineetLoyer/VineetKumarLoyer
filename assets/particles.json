@@ -1,13 +1,13 @@
 {
     "particles": {
-      "number": { "value": 80 },
+      "number": { "value": 500 },
       "color": { "value": "#ffffff" },
       "shape": {
         "type": "circle",
         "stroke": { "width": 0, "color": "#000000" }
       },
       "opacity": { "value": 0.5 },
-      "size": { "value": 3 },
+      "size": { "value": 2 },
       "move": {
         "enable": true,
         "speed": 2,

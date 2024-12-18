@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Century Schoolbook", "Georgia", serif;
 }
 
 body, html {
@@ -17,24 +17,100 @@ a {
     margin: 0 15px;
 }
 
+/* Header Styling */
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    color: white;
-    z-index: 100;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
 }
 
-header .logo {
+.logo {
+    color: #fff;
     font-size: 1.5rem;
+    font-weight: bold;
 }
 
-header nav a:hover {
-    border-bottom: 2px solid white;
+.logo h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0;
+}
+.nav-bar {
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center;
+    padding: 10px 20px;
+}
+/* Navigation Menu */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00aaff; /* Light blue on hover */
+}
+
+/* Hamburger Icon (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Mobile Responsive Styling */
+@media screen and (max-width: 768px) {
+    /* Show Hamburger Icon */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide Navigation Menu by Default */
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Below header */
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Show Navigation Menu when Active */
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 1.2rem;
+    }
+    
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        margin: 0 auto 20px; /* Center the image */
+    }
+
+    .about-content {
+        text-align: center;
+    }
 }
 
 /* Particles.js Background */
@@ -68,24 +144,139 @@ header nav a:hover {
     margin-top: 10px;
 }
 
-/* Footer */
+/*----------- Footer-------------------------------------------------------- */
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
     padding: 20px 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     z-index: 10;
 }
 
+.footer-icons {
+    margin-bottom: 10px;
+}
+
 .footer-icons a {
-    margin: 0 10px;
     color: white;
+    margin: 0 15px;
+    font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
 .footer-icons a:hover {
-    color: #00aaff;
+    color: #00aaff; /* Light blue hover effect */
 }
+
+footer p {
+    font-size: 0.9rem;
+}
+/* ########################################################################### */
+/* to make the background blur on small screens */
+/* Add Blur to Background */
+.blur-background {
+    filter: blur(5px); /* Apply blur */
+    pointer-events: none; /* Ensure it's not interactive */
+}
+
+/* Overlay for Better Readability */
+.overlay {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    backdrop-filter: blur(5px); /* Background blur */
+    z-index: 999; /* Below the navigation menu */
+}
+
+/* Show Overlay when Menu is Active */
+.overlay.active {
+    display: block;
+}
+/*##################################################################################*/
+
+/* About Me Page */
+/* Particles Background - Blur only on About Me Page */
+.about-page #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    filter: blur(5px); /* Blurs only on About Me page */
+    z-index: 1;
+}
+
+
+/* About Me Section */
+.about-me {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+    overflow-y: auto; /* Scroll only when content overflows */
+}
+
+/* About Container */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 1000px;
+    width: 90%;
+    text-align: left;
+}
+
+/* About Content */
+.about-content {
+    flex: 1;
+    text-align: left;
+    font-size: clamp(1rem, 2vw, 1.2rem); /* Scales nicely but within limits */
+    line-height: 1.6;
+}
+
+.about-content h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem); /* Responsive headings */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+}
+
+.about-content ul {
+    list-style: none;
+    padding: 0;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+/* Circular Image */
+.about-image img {
+    width: clamp(150px, 20vw, 200px); /* Proportional but capped */
+    height: clamp(150px, 20vw, 200px);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/*#############################################################*/
