@@ -111,6 +111,11 @@ nav a:hover {
     .about-content {
         text-align: center;
     }
+
+
+    .pdf-viewer iframe {
+        height: 60vh; /* Adjust for smaller screens */
+    }
 }
 
 /* Particles.js Background */
@@ -280,3 +285,51 @@ footer p {
 }
 
 /*#############################################################*/
+
+/* Resume Page Styles */
+.resume-page #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    filter: blur(5px); /* Blur background */
+    z-index: 1;
+}
+
+.resume-section {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    margin-top: 80px; /* Add space to prevent overlapping with the header */
+    color: white;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.resume-container {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.resume-container h1 {
+    font-size: 2.5rem;
+}
+
+.pdf-viewer iframe {
+    width: 100%;
+    height: 60vh; /* Adjust height to be proportional to screen */
+    border-radius: 10px;
+    border: none;
+}
+
+/* ###################################################################### */
