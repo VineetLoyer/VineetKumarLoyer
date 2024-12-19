@@ -14,10 +14,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +21,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: true
+          fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -34,12 +31,16 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify
+        working-directory: ./blog  # Add this line to specify the blog directory
+        run: |
+          pwd
+          ls -la
+          hugo --minify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./public
+          path: ./blog/public
 
   deploy:
     environment:
