@@ -1,0 +1,61 @@
+baseURL = "https://vineetloyer.github.io/VineetKumarLoyer/blog/"
+title = "Vineet Kumar Loyer"
+theme = "hugo-theme-cleanwhite"
+languageCode = "en-us"
+paginate = 10
+
+# These are important for the theme
+enableGitInfo = false
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[params]
+  title = "Vineet Kumar Loyer's Blog"
+  subtitle = "Data Scientist | Machine Learning Engineer"
+  header_image = "/img/neural-bg.jpg"
+  SEOTitle = "Vineet Kumar Loyer's Blog"
+  description = "A personal blog about technology and software development"
+  keyword = "blog, developer, golang, tech"
+  slogan = "Data Scientist | Machine Learning Engineer"
+  upstreamAttribution = true
+
+  image_404 = "/img/404-bg.jpg"
+  omit_categories = false
+
+  sidebar_about_description = "MS in Applied Data Science at USC, Ex-Software Engineer at Hitachi Ltd."
+  sidebar_avatar = "/img/vineet.jpeg"
+  
+  featured_tags = true
+  featured_condition_size = 1
+
+  about_me = true
+  
+  github_username = "VineetLoyer"
+  linkedin_username = "vineet-loyer"
+  kaggle_username = "vineetkumarloyer"
+
+  # Social Links
+  [params.social]
+  github         = "https://github.com/VineetLoyer"
+  linkedin       = "https://www.linkedin.com/in/vineet-loyer"
+  kaggle         = "https://www.kaggle.com/vineetkumarloyer"
+
+# Navigation
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "About"
+  url = "/about"
+  weight = 2
+
+[[menu.main]]
+  name = "Tags"
+  url = "/tags"
+  weight = 3
