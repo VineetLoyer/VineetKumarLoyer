@@ -54,11 +54,25 @@ nav a {
     text-decoration: none;
     color: #fff;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    color: white;
+    margin: 0 15px;
+    background-image: linear-gradient(
+        to right,
+        #990000,
+        #FFC72C 50%,
+        #fff 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
 }
 
 nav a:hover {
-    color: #00aaff; /* Light blue on hover */
+    background-position: 0;
+    color: transparent;
 }
 
 /* Hamburger Icon (Hidden on Desktop) */
@@ -169,11 +183,30 @@ footer {
     color: white;
     margin: 0 15px;
     font-size: 1.5rem;
-    transition: color 0.3s ease;
+    background-image: linear-gradient(
+        to right,
+        #990000,
+        #FFC72C 50%,
+        #fff 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
 }
 
 .footer-icons a:hover {
-    color: #00aaff; /* Light blue hover effect */
+    /* color: #00aaff; Light blue hover effect */
+    background-position: 0;
+}
+
+.footer-icons a i {
+    background-image: inherit;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 footer p {
@@ -330,6 +363,119 @@ footer p {
     height: 60vh; /* Adjust height to be proportional to screen */
     border-radius: 10px;
     border: none;
+}
+
+/* ###################################################################### */
+/* Projects Page */
+.projects-page #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    filter: blur(5px);
+    z-index: 1;
+}
+
+.projects-section {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+    min-height: 100vh; /* Ensures it spans the full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-card {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: left;
+}
+
+.project-card:hover {
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); /* Gradient effect */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+    color: #ffffff;
+}
+
+.project-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #FFC72C;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover h2 {
+    color: black;
+}
+
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #00aaff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: #ff6a9d;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+    }
+}
+
+/* Small screens */
+@media screen and (max-width: 480px) {
+    .projects-section h1 {
+        font-size: 2rem;
+    }
+
+    .project-card h2 {
+        font-size: 1.25rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
 }
 
 /* ###################################################################### */
