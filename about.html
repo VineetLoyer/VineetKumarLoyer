@@ -42,7 +42,9 @@
             </div>
             <!-- Content -->
             <div class="about-content">
-                <h2>About Me</h2>
+                <h1 class="typewriter">
+                    <span id="typewriter-text"></span>
+                </h1>
                 <p>
                     Hi! I’m <strong>Vineet Kumar Loyer</strong>, a passionate data enthusiast currently pursuing my 
                     <strong>MS in Applied Data Science</strong> at <strong>USC</strong>. I bring over <strong>3 years of experience</strong> 
@@ -84,6 +86,28 @@
             const navMenu = document.getElementById("nav-menu");
             navMenu.classList.toggle("active");
         }
+        const typewriterText = "About Me";
+        const typewriterElement = document.getElementById("typewriter-text");
+
+        let charIndex = 0;
+
+        function typeCharacter() {
+            if (charIndex < typewriterText.length) {
+                // Add the next character to the element
+                typewriterElement.textContent += typewriterText[charIndex];
+
+                // Increment the character index
+                charIndex++;
+
+                // Adjust the delay between each character
+                setTimeout(typeCharacter, 100); // Adjust typing speed (100ms per character)
+            }
+        }
+
+// Start typing effect when the DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+    typeCharacter();
+});
     </script>
 </body>
 </html>
