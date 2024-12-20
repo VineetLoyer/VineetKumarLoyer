@@ -316,6 +316,33 @@ footer p {
     margin-left: 20px;
     margin-right: 20px;
 }
+/* Typewriter Effect Styling */
+.typewriter {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    overflow: hidden;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+#typewriter-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+}
 
 /*#############################################################*/
 
