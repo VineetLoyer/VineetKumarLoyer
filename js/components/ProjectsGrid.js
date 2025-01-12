@@ -5,7 +5,7 @@ const projects = [
   {
     id: 1,
     title: "NutriVision",
-    image: "./assets/projects/nutrivision.png", // Using placeholder for demo
+    image: "https://vineetloyer.github.io/assets/projects/nutrivision.png", // Using placeholder for demo
     shortDescription: "An end-to-end automated solution to analyze food labels and calculate a health score.",
     fullDescription: "NutriVision leverages image recognition and text extraction to analyze food labels and calculate comprehensive health scores. The system provides detailed nutritional insights and recommendations based on the analyzed data.",
     tags: ["Computer Vision", "Machine Learning", "OCR"],
