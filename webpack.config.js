@@ -5,6 +5,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'js/dist'),
     filename: 'bundle.js',
+    publicPath: './js/dist/'  // Updated for GitHub Pages
   },
   module: {
     rules: [

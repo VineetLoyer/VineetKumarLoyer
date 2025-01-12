@@ -65,6 +65,12 @@ const ProjectCard = ({ project }) => {
                 alt={project.title} 
                 className="w-full h-64 object-cover"
               />
+                <img 
+                src={imageError ? '/api/placeholder/400/300' : project.image}
+                alt={project.title} 
+                className="w-full h-[300px] object-cover"
+                onError={handleImageError}
+                />
               <button
                 onClick={() => setIsExpanded(false)}
                 className="absolute top-4 right-4 bg-white rounded-full p-1 shadow-lg hover:bg-gray-100"
