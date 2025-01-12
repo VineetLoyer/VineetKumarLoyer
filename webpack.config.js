@@ -5,7 +5,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'js/dist'),
     filename: 'bundle.js',
-    publicPath: './js/dist/'  // Updated for GitHub Pages
+    publicPath: process.env.NODE_ENV === 'production' 
+      ? '/VineetKumarLoyer/'  // Your actual repo name
+      : '/'
   },
   module: {
     rules: [
