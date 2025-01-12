@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vineet Kumar Loyer | Portfolio</title>
+    <title>Projects - Vineet Kumar Loyer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-
 </head>
 <body>
     <!-- Header -->
@@ -37,27 +37,7 @@
     <div id="particles-js"></div>
 
     <section class="projects-section">
-        <div class="projects-container">
-            <!-- Card 1 -->
-            <div class="project-card">
-                <h2>NutriVision</h2>
-                <p>An end-to-end automated solution to analyze food labels and calculate a health score using image recognition and text extraction.</p>
-                <a href="https://github.com/VineetLoyer/NutriVision" target="_blank"><i class="fab fa-github" style='font-size:20px'></i></a>
-            </div>
-            <!-- Card 2 -->
-            <div class="project-card">
-                <h2>Chat-DB</h2>
-                <p>A full-stack application that simplifies database interaction. It allows users to upload datasets, explore database schemas, execute complex queries, and even generate queries from natural language inputs. The project supports both MySQL and MongoDB, offering a seamless experience for working with structured and unstructured data.</p>
-                <a href="https://github.com/VineetLoyer/ChatDB" target="_blank"><i class="fab fa-github" style='font-size:20px'></i></a>
-            </div>
-            <!-- Card 3 -->
-            <div class="project-card">
-                <h2>Real-Time Twitter Sentiment Analysis Pipeline </h2>
-                <p>Created real-time data pipeline processing 5K tweets/hour leveraging AWS Lambda, Kinesis Data Streams, and DynamoDB.</p>
-            </div>
-            <!-- Card 1 -->
-            
-        </div>
+        <div id = "projects-root"></div>
     </section>
     
 <!-- Footer -->
@@ -79,7 +59,7 @@
     <p>&copy; 2024 Vineet Kumar Loyer. All Rights Reserved.</p>
 </footer>
 
-
+<script src="./js/dist/bundle.js"></script>
 
 <!-- Particles.js Initialization -->
 <script>
