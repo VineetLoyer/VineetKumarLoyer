@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vineet Kumar Loyer | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+</head>
+<body class="resume-page">
+    <!-- Header -->
+    <header>
+        <div class="nav-bar">
+            <!-- Logo / Name -->
+            <div class="logo">
+                <h1><a href="index.html">Vineet Kumar Loyer</a></h1>
+            </div>
+    
+            <!-- Hamburger Icon for Mobile -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+    
+            <!-- Navigation Menu -->
+            <nav id="nav-menu">
+                <a href="about.html">About Me</a>
+                <a href="https://vineetloyer.github.io/Blog/">Blogs</a>
+                <a href="resume.html">Resume</a>
+                <a href="projects.html">Projects</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Resume Section -->
+    <section class="resume-section">
+        <div class="resume-container">
+            <!-- Embed PDF -->
+            <div class="pdf-viewer">
+                <iframe src="assets/Resume.pdf" type="application/pdf"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-icons">
+            <a href="https://www.linkedin.com/in/vineet-loyer" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/VineetLoyer" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.kaggle.com/vineetkumarloyer" target="_blank"><i class="fab fa-kaggle"></i></a>
+        </div>
+        <p>&copy; 2024 Vineet Kumar Loyer. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Particles.js Initialization -->
+    <script>
+        particlesJS.load('particles-js', 'assets/particles.json', function() {
+            console.log('particles.js loaded successfully');
+        });
+        function toggleMenu() {
+            const navMenu = document.getElementById("nav-menu");
+            navMenu.classList.toggle("active");
+        }
+    </script>
+</body>

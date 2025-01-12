@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Vineet Kumar Loyer</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+</head>
+<body class="about-page">
+    <!-- Header -->
+    <header>
+        <div class="nav-bar">
+            <div class="logo">
+                <h1><a href="index.html">Vineet Kumar Loyer</a></h1>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="nav-menu">
+                <a href="about.html">About Me</a>
+                <a href="https://vineetloyer.github.io/Blog/">Blogs</a>
+                <a href="projects.html">Projects</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- About Me Section -->
+    <section class="about-me">
+        <div class="about-container">
+            <!-- Image -->
+            <div class="about-image">
+                <img src="assets/myphoto.png" alt="Vineet Kumar Loyer">
+            </div>
+            <!-- Content -->
+            <div class="about-content">
+                <h1 class="typewriter">
+                    <span id="typewriter-text"></span>
+                </h1>
+                <p>
+                    Hi! I’m <strong>Vineet</strong>, a passionate data enthusiast currently pursuing my 
+                    <strong>MS in Applied Data Science</strong> at <strong>USC</strong>.<br><br>
+                    Previously, I worked as a <strong>Software Engineer</strong> at <strong>Hitachi</strong> for 3 years where I gained extensive experience in large-scale enterprise data systems, designing and optimizing robust data pipelines, and building scalable data platforms. My expertise includes integrating diverse data sources, implementing advanced optimization techniques, and developing analytics pipelines tailored to business needs.
+                    <br><br>
+                    If not working on data, you can find me exploring new places, hiking, playing chess or reading a book.
+                    <br><br>
+                    
+                </p>
+    
+                <h3>Skills</h3>
+                <ul>
+                    <li>Programming - Python, SQL, NoSQL, C++, Apache Kafka, PySpark</li>
+                    <li>Big Data & Cloud Platforms - Hadoop, Databricks, AWS, Azure, Snowflake</li>
+                    <li>Visualizations - Power BI </li>
+                    <li>Data Science: Machine Learning, Deep Learning</li>
+                    <li>Professional Certifications: Azure Data Scientist Associate, AWS Data Engineer, AWS Cloud Practitioner, SAP Security and Authorizations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-icons">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/vineet-loyer" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/VineetLoyer" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <!-- Kaggle -->
+            <a href="https://kaggle.com/yourprofile" target="_blank" aria-label="Kaggle">
+                <i class="fab fa-kaggle"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Vineet Kumar Loyer. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Particles.js Initialization -->
+    <script>
+        particlesJS.load('particles-js', 'assets/particles.json', function() {
+            console.log('particles.js loaded successfully');
+        });
+
+        function toggleMenu() {
+            const navMenu = document.getElementById("nav-menu");
+            navMenu.classList.toggle("active");
+        }
+        const typewriterText = "About Me";
+        const typewriterElement = document.getElementById("typewriter-text");
+
+        let charIndex = 0;
+
+        function typeCharacter() {
+            if (charIndex < typewriterText.length) {
+                // Add the next character to the element
+                typewriterElement.textContent += typewriterText[charIndex];
+
+                // Increment the character index
+                charIndex++;
+
+                // Adjust the delay between each character
+                setTimeout(typeCharacter, 100); // Adjust typing speed (100ms per character)
+            }
+        }
+
+// Start typing effect when the DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+    typeCharacter();
+});
+    </script>
+</body>
+</html>
