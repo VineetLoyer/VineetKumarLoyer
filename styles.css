@@ -316,6 +316,7 @@ footer p {
 /* About Container */
 .about-container {
     display: flex;
+    align-items: center; /* Center children horizontally */
     flex-direction: column;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
