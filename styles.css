@@ -376,7 +376,49 @@ footer p {
 }
 
 /*#############################################################*/
+.download-resume {
+    margin-top: 2rem;
+    text-align: center;
+}
 
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+    background-color: white;
+    color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.resume-btn i {
+    font-size: 1.1rem;
+}
+
+/* Add hover effect to match your theme */
+.resume-btn:hover i {
+    animation: bounce 0.5s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
 /* Resume Page Styles */
 .resume-page #particles-js {
     position: fixed;
