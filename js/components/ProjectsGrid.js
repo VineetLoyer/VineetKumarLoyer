@@ -5,7 +5,7 @@ const projects = [
   {
     id: 1,
     title: "NutriVision",
-    image: "https://github.com/VineetLoyer/VineetKumarLoyer/tree/main/assets/projects/nutrivision.png", // Using placeholder for demo
+    image: "../assets/projects/nutrivision.png",  // Using relative path
     shortDescription: "An end-to-end automated solution to analyze food labels and calculate a health score.",
     fullDescription: "NutriVision leverages image recognition and text extraction to analyze food labels and calculate comprehensive health scores. The system provides detailed nutritional insights and recommendations based on the analyzed data.",
     tags: ["Computer Vision", "Machine Learning", "OCR"],
@@ -15,7 +15,7 @@ const projects = [
   {
     id: 2,
     title: "Chat-DB",
-    image: "./assets/projects/chatdb.png", // Using placeholder for demo
+    image: "../assets/projects/chatdb.png",  // Using relative path
     shortDescription: "A full-stack application that simplifies database interaction.",
     fullDescription: "Chat-DB allows users to upload datasets, explore database schemas, execute complex queries, and generate queries from natural language inputs. The project supports both MySQL and MongoDB, offering a seamless experience for working with structured and unstructured data.",
     tags: ["Full Stack", "Natural Language Processing", "Database"],
@@ -25,7 +25,7 @@ const projects = [
   {
     id: 3,
     title: "Real-Time Twitter Sentiment Analysis Pipeline",
-    image: "./assets/projects/analysispipeline.png", // Using placeholder for demo
+    image: "../assets/projects/analysispipeline.png",  // Using relative path
     shortDescription: "Real-time data pipeline processing 5K tweets/hour.",
     fullDescription: "Created real-time data pipeline processing 5K tweets/hour leveraging AWS Lambda, Kinesis Data Streams, and DynamoDB. The system performs sentiment analysis on tweets and provides real-time insights.",
     tags: ["AWS", "Big Data", "Sentiment Analysis"],
@@ -36,6 +36,12 @@ const projects = [
 
 const ProjectCard = ({ project }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = (e) => {
+    console.error(`Failed to load image: ${e.target.src}`);
+    setImageError(true);
+  };
 
   return (
     <div className="relative">
@@ -46,9 +52,10 @@ const ProjectCard = ({ project }) => {
         onClick={() => setIsExpanded(true)}
       >
         <img 
-          src={project.image} 
+          src={imageError ? '/api/placeholder/400/300' : project.image}
           alt={project.title} 
           className="w-full h-48 object-cover"
+          onError={handleImageError}
         />
         <h2 className="text-xl font-bold p-4 text-center text-gray-800">
           {project.title}
@@ -61,16 +68,11 @@ const ProjectCard = ({ project }) => {
           <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="relative">
               <img 
-                src={project.image} 
+                src={project.image}
                 alt={project.title} 
                 className="w-full h-64 object-cover"
-              />
-                <img 
-                src={imageError ? '/api/placeholder/400/300' : project.image}
-                alt={project.title} 
-                className="w-full h-[300px] object-cover"
                 onError={handleImageError}
-                />
+              />
               <button
                 onClick={() => setIsExpanded(false)}
                 className="absolute top-4 right-4 bg-white rounded-full p-1 shadow-lg hover:bg-gray-100"
@@ -102,6 +104,7 @@ const ProjectCard = ({ project }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <Github className="w-5 h-5" />
                     View Source
@@ -113,6 +116,7 @@ const ProjectCard = ({ project }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <ExternalLink className="w-5 h-5" />
                     Live Demo
