@@ -5,7 +5,7 @@ const projects = [
   {
     id: 1,
     title: "NutriVision",
-    image: "../assets/projects/nutrivision.png",  // Using relative path
+    image: "../../projects/nutrivision.png",  // Using relative path
     shortDescription: "An end-to-end automated solution to analyze food labels and calculate a health score.",
     fullDescription: "NutriVision leverages image recognition and text extraction to analyze food labels and calculate comprehensive health scores. The system provides detailed nutritional insights and recommendations based on the analyzed data.",
     tags: ["Computer Vision", "Machine Learning", "OCR"],
@@ -15,7 +15,7 @@ const projects = [
   {
     id: 2,
     title: "Chat-DB",
-    image: "../assets/projects/chatdb.png",  // Using relative path
+    image: "../../projects/chatdb.png",  // Using relative path
     shortDescription: "A full-stack application that simplifies database interaction.",
     fullDescription: "Chat-DB allows users to upload datasets, explore database schemas, execute complex queries, and generate queries from natural language inputs. The project supports both MySQL and MongoDB, offering a seamless experience for working with structured and unstructured data.",
     tags: ["Full Stack", "Natural Language Processing", "Database"],
@@ -25,7 +25,7 @@ const projects = [
   {
     id: 3,
     title: "Real-Time Twitter Sentiment Analysis Pipeline",
-    image: "../assets/projects/analysispipeline.png",  // Using relative path
+    image: "../../projects/analysispipeline.png",  // Using relative path
     shortDescription: "Real-time data pipeline processing 5K tweets/hour.",
     fullDescription: "Created real-time data pipeline processing 5K tweets/hour leveraging AWS Lambda, Kinesis Data Streams, and DynamoDB. The system performs sentiment analysis on tweets and provides real-time insights.",
     tags: ["AWS", "Big Data", "Sentiment Analysis"],
