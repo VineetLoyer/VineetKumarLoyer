@@ -7,8 +7,10 @@
 }
 
 body, html {
-    height: 100%;
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 a {
@@ -130,25 +132,33 @@ nav a:hover {
         font-size: 1.2rem;
     }
     
+    .about-me {
+        padding: 60px 10px 80px; /* Reduced padding */
+    }
+
     .about-container {
-        flex-direction: column;
-        text-align: center;
+        width: 95%;
+        margin: 0 auto;
+        padding: 15px;
     }
-
-    .about-image img {
-        margin: 0 auto 20px; /* Center the image */
+    body {
+        padding-bottom: 60px;
     }
-
     .about-content {
-        text-align: center;
-    }
-
-
-    .pdf-viewer iframe {
-        height: 60vh; /* Adjust for smaller screens */
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     }
 }
+@media (max-height: 800px) {
+    .about-me {
+        height: auto;
+        min-height: 100%;
+    }
 
+    .about-container {
+        margin: 10px auto 60px auto; /* Add bottom margin for footer */
+    }
+}
 /* Particles.js Background */
 #particles-js {
     position: absolute;
@@ -199,8 +209,9 @@ nav a:hover {
 
 /*----------- Footer-------------------------------------------------------- */
 footer {
-    position: absolute;
+    position: fixed; /* Changed from absolute to fixed */
     bottom: 0;
+    left: 0;
     width: 100%;
     text-align: center;
     padding: 20px 0;
@@ -292,41 +303,45 @@ footer p {
 .about-me {
     position: relative;
     z-index: 10;
+    min-height: calc(100vh - 160px); /* Account for header and footer */
+    padding: 80px 20px 80px; /* Top padding for header, bottom for footer */
+    color: white;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    color: white;
-    overflow-y: auto; /* Scroll only when content overflows */
+    align-items: flex-start; /* Changed from center */
+    margin-bottom: 60px; /* Space for footer */
 }
 
 /* About Container */
 .about-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     max-width: 1000px;
     width: 90%;
-    text-align: left;
+    position: relative;
+    margin: 0 auto;
 }
 
 /* About Content */
 .about-content {
+    direction: flex;
+    flex-direction: column;
+    padding-bottom: 70px;
+    position: relative;
     flex: 1;
     text-align: left;
-    font-size: clamp(1rem, 2vw, 1.2rem); /* Scales nicely but within limits */
+    font-size: clamp(1.0rem,2vw,1.1rem);
     line-height: 1.6;
 }
 
 .about-content h2 {
-    font-size: clamp(1.8rem, 3vw, 2.5rem); /* Responsive headings */
+    font-size: clamp(1.3em, 3vw, 2.5rem); /* Responsive headings */
     margin-bottom: 15px;
     text-align: center;
 }
@@ -338,7 +353,7 @@ footer p {
 .about-content ul {
     list-style: none;
     padding: 0;
-    font-size: clamp(1rem, 2vw, 1.1rem);
+    font-size: clamp(1.0rem,2vw,1.1rem);
 }
 
 /* Circular Image */
@@ -377,8 +392,14 @@ footer p {
 
 /*#############################################################*/
 .download-resume {
-    margin-top: 2rem;
+    margin-top: auto;
     text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+
 }
 
 .resume-btn {
@@ -418,6 +439,7 @@ footer p {
     50% {
         transform: translateY(-3px);
     }
+   
 }
 /* Resume Page Styles */
 .resume-page #particles-js {
